@@ -1,0 +1,25 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/jsx-no-undef": 1, // Disallow use of undefined components
+    "react/no-direct-mutation-state": 1, // Prevent direct mutation of state
+    "no-undef": 1, // Disallow use of undefined variables
+    "no-var": 1, // Require the use of let or const instead of var (ES6)
+  },
+  "plugins": [
+    "react"
+  ]
+}
