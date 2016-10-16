@@ -3,20 +3,18 @@
 </p>
 
 <h1 align="center">React Relay Pokémon</h1>
-
 <p align="center">
-  Use React & Relay as your Pokedex!
+  Use React & Relay as your Pokedex!<br />
+  <a href="https://react-relay-pokemon.now.sh/">See the live demo</a>
 </p>
-
-### [See the live demo][react-relay-pokemon]
 
 ### This is a project built to be used with [GraphQL Pokémon][graphql-pokemon-repo]
 
-### Check out the [GraphiQL interface][graphiql-interface] too!
+> Check out the [GraphiQL interface][graphiql-interface] too!
 
 ## Running
 
-### Copy `.env.example` file to create `.env` and `.env.local` which will be, respectively, the environment variables for production and local-running.
+> Copy `.env.example` file to create `.env` and `.env.local` which will be, respectively, the environment variables for production and local-running.
 
 ### Production
 
