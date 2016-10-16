@@ -27,7 +27,7 @@ module.exports = {
 	},
 	plugins: [
 		new dotEnv({
-			path: './.env.prod',
+			path: './.env',
 		}),
 		new webpack.DefinePlugin({
 			'process.env': {
