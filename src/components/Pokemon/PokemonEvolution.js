@@ -1,4 +1,5 @@
 import React from 'react';
+import Relay from 'react-relay';
 import { Link } from 'react-router';
 
 import { List, ListItem } from 'material-ui/List';
@@ -36,4 +37,15 @@ const PokemonEvolution = ({ evolutions }) => (
   </div>
 );
 
-export default PokemonEvolution;
+export default Relay.createContainer(PokemonEvolution, {
+  fragments: {
+    evolutions: () => Relay.QL`
+      fragment on Pokemon @relay(plural: true) {
+        id
+        name
+        number
+        image
+      }
+    `,
+  }
+});

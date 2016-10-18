@@ -56,7 +56,7 @@ class PokemonDetail extends Component {
               </Chip>
             )}
           </div>
-          <PokemonEvolution evolutions={evolutions} />
+          <PokemonEvolution evolutions={evolutions|| null} />
         </CardText>
         <CardActions style={styles.cardActions}>
           <FlatButton
@@ -105,10 +105,7 @@ export default Relay.createContainer(withRouter(PokemonDetail), {
           types
           weaknesses
           evolutions {
-            id
-            number
-            name
-            image
+            ${PokemonEvolution.getFragment('evolutions')}
           }
         }
       }
