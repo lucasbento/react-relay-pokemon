@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Relay from 'react-relay';
-import { withRouter, Link } from 'react-router';
+import { withRouter } from 'react-router';
+
+import PokemonEvolution from './PokemonEvolution';
 
 import { Card, CardActions, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
-import { List, ListItem } from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
-import Subheader from 'material-ui/Subheader';
 import FlatButton from 'material-ui/FlatButton';
 
 class PokemonDetail extends Component {
@@ -29,8 +28,12 @@ class PokemonDetail extends Component {
               subtitle={types.join(', ')}
             />
           }
+          style={styles.cardMedia}
         >
-          <img src={image} />
+          <img
+            src={image}
+            style={styles.pokemonImage}
+          />
         </CardMedia>
         <CardText>
           <div style={styles.chips}>
@@ -53,25 +56,7 @@ class PokemonDetail extends Component {
               </Chip>
             )}
           </div>
-          {evolutions ?
-            <List>
-              <Subheader>Evolutions</Subheader>
-              {evolutions.map(evolution => (
-                <Link
-                  to={evolution.id}
-                  key={evolution.id}
-                >
-                  <ListItem
-                    primaryText={`${evolution.number} - ${evolution.name}`}
-                    leftAvatar={<Avatar src={evolution.image} />}
-                  />
-                </Link>
-              ))}
-            </List> :
-            <div style={styles.lastEvolutionWarning}>
-              This is the last evolution
-            </div>
-          }
+          <PokemonEvolution evolutions={evolutions} />
         </CardText>
         <CardActions style={styles.cardActions}>
           <FlatButton
@@ -96,8 +81,13 @@ const styles = {
   chip: {
     margin: 5,
   },
-  lastEvolutionWarning: {
-    margin: 7,
+  cardMedia: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  pokemonImage: {
+    minWidth: 200,
+    maxWidth: 200,
   },
 };
 
