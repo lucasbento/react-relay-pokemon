@@ -30,6 +30,11 @@
   yarn run start
 ```
 
+## Disclaimer
+
+This was built as part of a talk on Relay & GraphQL at [@ReactBrasil][react-brasil] meetup, check us out, we build cool stuff. ;)
+
 [react-relay-pokemon]: https://react-relay-pokemon.now.sh/
 [graphql-pokemon-repo]: https://github.com/lucasbento/graphql-pokemon
 [graphiql-interface]: https://graphql-pokemon.now.sh/
+[react-brasil]: https://github.com/react-brasil
