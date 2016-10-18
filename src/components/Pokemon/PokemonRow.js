@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Relay from 'react-relay';
-import { Link } from 'react-router';
+import { withRouter } from 'react-router';
 
 import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
@@ -16,27 +16,26 @@ class PokemonRow extends Component {
     } = this.props.pokemon;
 
     return (
-      <Link to={id}>
-        <GridTile
-          key={id}
-          title={`${number} - ${name}`}
-          subtitle={types.join(', ')}
-        >
-          <img src={image} />
-        </GridTile>
-      </Link>
+      <GridTile
+        key={id}
+        title={`${number} - ${name}`}
+        subtitle={types.join(', ')}
+        style={styles.gridTile}
+        onClick={() => this.props.router.push(id)}
+      >
+        <img src={image} />
+      </GridTile>
     );
   }
 }
 
 const styles = {
-  title: {
-    color: 'white',
-    textDecoration: 'none',
+  gridTile: {
+    cursor: 'pointer',
   },
 };
 
-export default Relay.createContainer(PokemonRow, {
+export default Relay.createContainer(withRouter(PokemonRow), {
   fragments: {
     pokemon: () => Relay.QL`
       fragment on Pokemon {
