@@ -22,7 +22,7 @@ class PokemonRow extends Component {
         title={`${number} - ${name}`}
         subtitle={types.join(', ')}
         style={styles.gridTile}
-        onClick={() => this.props.router.push(id)}
+        onTouchTap={() => this.props.router.push(id)}
       >
         <CardMedia>
           <img

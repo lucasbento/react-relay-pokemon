@@ -1,6 +1,6 @@
 import React from 'react';
 import Relay from 'react-relay';
-import { Link } from 'react-router';
+import { withRouter } from 'react-router';
 
 import { List, ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
@@ -12,22 +12,19 @@ const styles = {
   },
 };
 
-const PokemonEvolution = ({ evolutions }) => (
+const PokemonEvolution = ({ evolutions, router }) => (
   <div>
     {evolutions ?
       <List>
         <Subheader>Evolutions</Subheader>
 
         {evolutions.map(evolution => (
-          <Link
-            to={evolution.id}
+          <ListItem
             key={evolution.id}
-          >
-            <ListItem
-              primaryText={`${evolution.number} - ${evolution.name}`}
-              leftAvatar={<Avatar src={evolution.image} />}
-            />
-          </Link>
+            primaryText={`${evolution.number} - ${evolution.name}`}
+            leftAvatar={<Avatar src={evolution.image} />}
+            onTouchTap={() => router.push(evolution.id)}
+          />
         ))}
       </List> :
       <div style={styles.lastEvolutionWarning}>
@@ -37,7 +34,7 @@ const PokemonEvolution = ({ evolutions }) => (
   </div>
 );
 
-export default Relay.createContainer(PokemonEvolution, {
+export default Relay.createContainer(withRouter(PokemonEvolution), {
   fragments: {
     evolutions: () => Relay.QL`
       fragment on Pokemon @relay(plural: true) {
