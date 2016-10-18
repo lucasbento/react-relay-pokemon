@@ -58,7 +58,7 @@ class PokemonList extends Component {
 
 export default Relay.createContainer(PokemonList, {
   initialVariables: {
-    count: 15,
+    count: 20,
   },
   fragments: {
     viewer: () => Relay.QL`
