@@ -3,6 +3,7 @@ import Relay from 'react-relay';
 import { withRouter } from 'react-router';
 
 import { GridTile } from 'material-ui/GridList';
+import { CardMedia } from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
 
 class PokemonRow extends Component {
@@ -23,7 +24,12 @@ class PokemonRow extends Component {
         style={styles.gridTile}
         onClick={() => this.props.router.push(id)}
       >
-        <img src={image} />
+        <CardMedia>
+          <img
+            src={image}
+            style={styles.pokemonImage}
+          />
+        </CardMedia>
       </GridTile>
     );
   }
@@ -32,6 +38,12 @@ class PokemonRow extends Component {
 const styles = {
   gridTile: {
     cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  pokemonImage: {
+    width: 170,
+    height: 170,
   },
 };
 
