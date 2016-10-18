@@ -12,7 +12,7 @@ const styles = {
   },
   paper: {
     flex: '0 0 50%',
-    minHeight: 400,
+    minHeight: 200,
     margin: spacing.desktopGutter,
     fontFamily: 'Roboto',
   },
