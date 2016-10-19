@@ -42,7 +42,6 @@ const styles = {
     justifyContent: 'center',
   },
   pokemonImage: {
-    width: 170,
     height: 170,
   },
 };
