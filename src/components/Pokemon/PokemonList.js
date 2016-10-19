@@ -12,6 +12,7 @@ class PokemonList extends Component {
     isLoading: false,
   }
 
+  // Infinity loading
   handleScroll = () => {
     if (((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 300)) && !this.state.isLoading) {
       this.setState({
@@ -56,11 +57,15 @@ class PokemonList extends Component {
   }
 }
 
+// Relay fornece um HOC, onde passadamos o component
+// à query no GraphQL
 export default Relay.createContainer(PokemonList, {
+  // Variáveis iniciais que serão utilizadas na query
   initialVariables: {
-    count: 20,
+    count: 20, // Quantos pokemons iremos solicitar ao GraphQL no init
   },
   fragments: {
+    // Fragmento que será agrupado à query root
     viewer: () => Relay.QL`
       fragment on Viewer {
         pokemons(first: $count) {
