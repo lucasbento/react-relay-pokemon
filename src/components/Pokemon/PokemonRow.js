@@ -43,6 +43,7 @@ const styles = {
   },
   pokemonImage: {
     height: 170,
+    width: 'initial',
   },
 };
 
