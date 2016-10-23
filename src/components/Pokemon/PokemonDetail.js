@@ -17,7 +17,7 @@ class PokemonDetail extends Component {
       types,
       weaknesses,
       evolutions,
-    } = this.props.viewer.pokemon;
+    } = this.props.query.pokemon;
 
     return (
       <Card>
@@ -96,8 +96,8 @@ export default Relay.createContainer(withRouter(PokemonDetail), {
     id: null,
   },
   fragments: {
-    viewer: () => Relay.QL`
-      fragment on Viewer {
+    query: () => Relay.QL`
+      fragment on Query {
         pokemon(id: $id) {
           number
           name

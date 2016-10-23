@@ -14,10 +14,10 @@ import PokemonDetail from './components/Pokemon/PokemonDetail';
 
 const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
-const ViewerQueries = {
-  viewer: () => Relay.QL`
+const RootQuery = {
+  query: () => Relay.QL`
     query {
-      viewer
+      query
     }
   `,
 };
@@ -32,12 +32,12 @@ const AppRoute = () => (
       <Route
         path="/"
         component={PokemonList}
-        queries={ViewerQueries}
+        queries={RootQuery}
       />
       <Route
         path=":id"
         component={PokemonDetail}
-        queries={ViewerQueries}
+        queries={RootQuery}
       />
     </Router>
   </App>
