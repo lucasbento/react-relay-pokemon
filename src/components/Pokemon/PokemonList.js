@@ -36,7 +36,7 @@ class PokemonList extends Component {
   componentWillUnmount = () => window.removeEventListener('scroll', this.handleScroll)
 
   render() {
-    const { pokemons } = this.props.viewer;
+    const { pokemons } = this.props.query;
 
     return (
       <div>
@@ -61,8 +61,8 @@ export default Relay.createContainer(PokemonList, {
     count: 20,
   },
   fragments: {
-    viewer: () => Relay.QL`
-      fragment on Viewer {
+    query: () => Relay.QL`
+      fragment on Query {
         pokemons(first: $count) {
           id
           ${PokemonRow.getFragment('pokemon')}
