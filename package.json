@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "babel-relay-plugin": "0.10.0",
-    "material-ui": "^0.16.5",
+    "material-ui": "^0.16.6",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-relay": "^0.10.0",
