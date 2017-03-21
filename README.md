@@ -8,9 +8,9 @@
   <a href="https://react-relay-pokemon.now.sh/">See the live demo</a>
 </p>
 
-### This is a project built to be used with [GraphQL Pokémon][graphql-pokemon-repo]
+### This is a project built to be used with [GraphQL Pokémon](https://github.com/lucasbento/graphql-pokemon)
 
-> Check out the [GraphiQL interface][graphiql-interface] too!
+> Check out the [GraphiQL interface](https://graphql-pokemon.now.sh/) too!
 
 ## Running
 
@@ -18,23 +18,18 @@
 
 ### Production
 
-````sh
+```sh
   yarn
   yarn run build # The files will be available on ./dist
 ```
 
 ### Development
 
-````sh
+```sh
   yarn
   yarn run start
 ```
 
 ## Disclaimer
 
-This was built as part of a talk on Relay & GraphQL at [@ReactBrasil][react-brasil] meetup, check us out, we build cool stuff. ;)
-
-[react-relay-pokemon]: https://react-relay-pokemon.now.sh/
-[graphql-pokemon-repo]: https://github.com/lucasbento/graphql-pokemon
-[graphiql-interface]: https://graphql-pokemon.now.sh/
-[react-brasil]: https://github.com/react-brasil
+This was built as part of a talk on Relay & GraphQL at [@ReactSP](https://meetup.com/pt-BR/ReactJS-SP) meetup, check us out, we build cool stuff. ;)
